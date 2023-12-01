@@ -1,5 +1,5 @@
-# Mapper-Reducer-in-Python-
-Python implementation for analyzing the strike rate of a cricket batsmen using Hadoop MapReduce.
+# Mapper-Reducer-in-Python
+Python implementation for analyzing the strike rate of a cricket batsmen using Hadoop MapReduce and finding the final strike rate of each batsman.
 
 # Cricket Strike Rate Analyzer
 
@@ -8,10 +8,10 @@ Python implementation for analyzing the strike rate of a cricket batsmen using H
 - **Mapper Code:** [`mapper.py`](mapper.py) - Processes input data and emits intermediate key-value pairs.
 - **Reducer Code:** [`reducer.py`](reducer.py) - Aggregates intermediate results and calculates the final strike rate for each batsman.
 - **Sample Input:** [`sample_data.json`](sample_data.json) - Contains cricket statistics.
+- **Sample Output:** [`expexted_output_sample_data.json`](expected_output_sample_data.txt) - Contains expected output.
 
 
 ## Usage
-
 
 1. Create an HDFS directory for input:
 
