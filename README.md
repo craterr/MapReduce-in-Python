@@ -2,8 +2,32 @@
 Python implementation for analyzing the strike rate of a cricket batsmen using Hadoop MapReduce and finding the final strike rate of each batsman.
 
 # Cricket Strike Rate Analyzer
+## Problem Statement
+Strike Rate is the average runs a batsman scores in 100 balls. Given the input,
+find the final strike rate of each batsman.
 
-## Repository Structure
+Local_strike_rate refers to the strike rate of the particular match.
+
+Strike Rate formula = (runs/balls) * 100 [rounded upto 3 decimal places].
+
+Average strike rate = sum of all local strike rates / total matches [rounded upto 3 decimal places]
+
+
+- ### Mapper
+    **Input** : Array of JSON Objects
+  
+    **Output** : name,local_strike_rate
+
+- ### Reducer
+   **Input** : Same format as Mapper output
+  
+   **Output** : Independent JSON Objects (refer to--> [`expexted_output_sample_data.json`](expected_output_sample_data.txt) )
+
+                
+  
+  
+
+# Repository Structure
 
 - **Mapper Code:** [`mapper.py`](mapper.py) - Processes input data and emits intermediate key-value pairs.
 - **Reducer Code:** [`reducer.py`](reducer.py) - Aggregates intermediate results and calculates the final strike rate for each batsman.
@@ -11,8 +35,14 @@ Python implementation for analyzing the strike rate of a cricket batsmen using H
 - **Sample Output:** [`expexted_output_sample_data.json`](expected_output_sample_data.txt) - Contains expected output.
 
 
-## Usage
-
+# Usage
+## Local testing 
+-
+    ```bash
+    cat sample_data.json | ./mapper.py | sort -k 1,1 | ./reducer.py
+    ```
+## Hadoop Testing
+    
 1. Create an HDFS directory for input:
 
     ```bash
